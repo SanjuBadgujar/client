@@ -1,0 +1,404 @@
+.player-predictor {
+  padding: 2rem 0;
+}
+
+.predictor-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.form-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.prediction-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-row:last-of-type {
+  grid-template-columns: 1fr;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.predict-btn {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.predict-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.predict-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.reset-btn {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+/* Player Stats Section */
+.player-stats-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.player-stats-section h3 {
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #bae6fd;
+}
+
+.stat-title {
+  display: block;
+  font-size: 0.9rem;
+  color: #0369a1;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0c4a6e;
+}
+
+/* Prediction Result */
+.prediction-result {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prediction-result h3 {
+  margin-bottom: 2rem;
+  color: #1f2937;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Prediction Header */
+.prediction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-radius: 12px;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.player-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0c4a6e;
+}
+
+.performance-class {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.confidence-score {
+  text-align: right;
+}
+
+.confidence-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.confidence-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0c4a6e;
+}
+
+/* Prediction Metrics */
+.prediction-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-card.runs {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+}
+
+.metric-card.wickets {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border: 2px solid #3b82f6;
+}
+
+.metric-card.fantasy {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border: 2px solid #8b5cf6;
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.metric-icon {
+  font-size: 1.5rem;
+}
+
+.metric-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* Prediction Factors */
+.prediction-factors {
+  margin-bottom: 2rem;
+}
+
+.prediction-factors h4 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-size: 1.2rem;
+}
+
+.prediction-factors ul {
+  list-style: none;
+  padding: 0;
+}
+
+.prediction-factors li {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #ecfdf5;
+  border-left: 4px solid #10b981;
+  border-radius: 4px;
+  color: #065f46;
+}
+
+/* Fantasy Breakdown */
+.fantasy-breakdown {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.fantasy-breakdown h4 {
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.breakdown-items {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #8b5cf6;
+}
+
+.breakdown-item.bonus {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .prediction-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .confidence-score {
+    text-align: center;
+  }
+  
+  .prediction-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .metric-value {
+    font-size: 2.5rem;
+  }
+  
+  .breakdown-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .breakdown-total {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1.5rem;
+  }
+  
+  .prediction-result {
+    padding: 1.5rem;
+  }
+  
+  .metric-card {
+    padding: 1.5rem;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+  }
+  
+  .fantasy-breakdown {
+    padding: 1.5rem;
+  }
+}
